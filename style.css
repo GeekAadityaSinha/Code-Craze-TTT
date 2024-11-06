@@ -1,0 +1,80 @@
+/* style.css */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #882c2c;
+  }
+  
+  h1 {
+    margin-top: 20px;
+  }
+  
+  .status {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .cell.x {
+    color: #ff6347;
+  }
+  
+  .cell.o {
+    color: #4682b4;
+  }
+  
+  .restart-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Confetti container */
+  .confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    display: none; /* Hidden by default */
+  }
+  
+  .confetti-piece {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #ff6347;
+    opacity: 0;
+    animation: fall 3s ease-in-out forwards;
+  }
+  
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+  }
+  
